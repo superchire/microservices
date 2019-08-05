@@ -1,0 +1,14 @@
+server:
+  port: 82
+
+
+spring:
+  application:
+    name: service-invoker
+
+eureka:
+  client:
+    serviceUrl:
+      # 將服務註冊到eureka-server
+      defaultZone: http://localhost:8781/eureka/
+
