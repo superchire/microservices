@@ -11,4 +11,10 @@ eureka:
     serviceUrl:
       # 將服務註冊到eureka-server
       defaultZone: http://localhost:8781/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 16
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 8
+    lease-expiration-duration-in-seconds: 24
 
