@@ -1,0 +1,32 @@
+server:
+  port: 85
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  profiles:
+    active: native
+  devtools:
+    add-properties: false
+    #  cloud:
+    #    config:
+    #      server:
+    #        git:
+    #          uri: https://github.com/superchire/config-repo                      # 配置git仓库的地址
+    #          username: superchire                                            # git仓库的账号
+    #          password: iamroofy13                                            # git仓库的密码
+
+
+eureka:
+  client:
+    serviceUrl:
+      # 將服務註冊到eureka-server
+      defaultZone: http://localhost:8781/eureka/,http://localhost:8782/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 16
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 8
+    lease-expiration-duration-in-seconds: 24
+
+
