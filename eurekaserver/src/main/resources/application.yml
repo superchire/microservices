@@ -1,13 +1,34 @@
+#單機
+#server:
+#  port: 8781
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  server:
+#    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 5000
+
+
+
+#兩台eureka server ha
+spring:
+  application:
+      name: Eureka-Server
 server:
   port: 8781
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer1
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 5000
+      defaultZone: http://peer2:8782/eureka
+
+
+
+
+

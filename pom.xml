@@ -24,10 +24,12 @@
 
     <modules>
         <module>configserver</module>
+        <module>configserver2</module>
         <module>eurekaclient3</module>
         <module>eurekaclient2</module>
         <module>eurekaclient</module>
         <module>eurekaserver</module>
+        <module>eurekaserver2</module>
         <module>serviceinvoker</module>
     </modules>
 
