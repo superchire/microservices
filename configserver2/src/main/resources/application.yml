@@ -1,9 +1,9 @@
 server:
-  port: 86
+  port: 8002
 
 spring:
   application:
-    name: spring-cloud-config-server
+    name: config-server
   profiles:
     active: native
   devtools:
