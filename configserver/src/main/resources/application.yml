@@ -8,6 +8,7 @@ spring:
     active: native
   devtools:
     add-properties: false
+
     #  cloud:
     #    config:
     #      server:

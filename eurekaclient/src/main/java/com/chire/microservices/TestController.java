@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Value("${chire.hello}")
-    private String hello;
+    @Value("${chire.secret}")
+    private String secret;
 
 
     @GetMapping("test")
@@ -18,8 +18,8 @@ public class TestController {
 
 
 
-    @GetMapping("hello")
+    @GetMapping("secret")
     public String from() {
-        return this.hello;
+        return this.secret;
     }
 }

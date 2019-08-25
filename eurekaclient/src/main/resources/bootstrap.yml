@@ -19,3 +19,11 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 8
     lease-expiration-duration-in-seconds: 24
+
+encrypt:
+  key-store:
+    location: classpath:/config-service.jks
+    alias: shaman
+    password: shaman
+    secret: ctbcshaman
+
