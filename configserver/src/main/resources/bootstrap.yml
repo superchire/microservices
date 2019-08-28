@@ -1,0 +1,7 @@
+encrypt:
+  key-store:
+    location: classpath:/config-service.jks
+    alias: shaman
+    password: shaman
+    secret: ctbcshaman
+
