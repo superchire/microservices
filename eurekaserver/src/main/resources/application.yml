@@ -19,6 +19,11 @@
 spring:
   application:
       name: eureka-server
+#  security:
+#    user:
+#      name: jerry
+#      password: jerry
+
 server:
   port: 8781
 eureka:
@@ -27,7 +32,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer2:8782/eureka
-
 
 
 

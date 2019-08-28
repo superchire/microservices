@@ -22,6 +22,7 @@ eureka:
   client:
     serviceUrl:
       # 將服務註冊到eureka-server
+#      defaultZone: http://jerry:jerry@localhost:8781/eureka/,http://localhost:8782/eureka/
       defaultZone: http://localhost:8781/eureka/,http://localhost:8782/eureka/
     fetch-registry: true
     registry-fetch-interval-seconds: 16
