@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<springProperty scope="context" name="APPNAME" source="ctbc.project.name"/>-->
+    <springProperty scope="context" name="LOGGING_DIR" source="logging.dir"/>
+    <springProperty scope="context" name="DRIVER_CLASS" source="spring.datasource.driverClassName"/>
+    <springProperty scope="context" name="JDBC_URL" source="spring.datasource.jdbc-url"/>
+    <springProperty scope="context" name="USERNAME" source="spring.datasource.username"/>
+    <springProperty scope="context" name="PASSWORD" source="spring.datasource.password"/>
+
+    <property name="CONSOLE_LOG_PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n"/>
+    <property name="MAX_FILE_SIZE" value="100MB"/>
+    <property name="MAX_HISTORY" value="90"/>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <contextName>eureka-server</contextName>
+
+    <!--LOG到CONSOLE-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <!--LOG-->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGGING_DIR}/eurekaserver.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGGING_DIR}/eurekaserver.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--LOG到ERROR-->
+    <appender name="file-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGGING_DIR}/eurekaserver_error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGGING_DIR}/eurekaserver_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+
+    <!--全部系統的紀錄-->
+    <root>
+        <appender-ref ref="file" />
+        <appender-ref ref="file-error" />
+    </root>
+
+</configuration>
