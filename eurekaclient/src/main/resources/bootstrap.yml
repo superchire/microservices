@@ -7,12 +7,16 @@ spring:
       name: chire
       profile: dev
       uri: http://config-server/    #config server URL
+      username: admin
+      password: admin
 #      uri: http://localhost:85/
+
+
 eureka:
   client:
     serviceUrl:
       # 將服務註冊到eureka-server
-      defaultZone: http://localhost:8781/eureka/
+      defaultZone: http://localhost:8781/eureka/,http://localhost:8782/eureka/
     fetch-registry: true
     registry-fetch-interval-seconds: 16
   instance:

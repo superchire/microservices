@@ -8,14 +8,21 @@ spring:
     active: native
   devtools:
     add-properties: false
-
+  security:
+    user:
+      name: admin
+      password: admin
+  cloud:
+    config:
+      discovery:
+        enabled: false
     #  cloud:
     #    config:
     #      server:
     #        git:
-    #          uri: https://github.com/superchire/config-repo                      # 配置git仓库的地址
-    #          username: superchire                                            # git仓库的账号
-    #          password: iamroofy13                                            # git仓库的密码
+    #          uri: https://github.com/superchire/config-repo        # 配置git仓库的地址
+    #          username:                                             # git仓库的账号
+    #          password:                                             # git仓库的密码
 
 
 eureka:

@@ -15,15 +15,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 //        auth.inMemoryAuthentication()
-//                .withUser("admin").password("admin").roles("SUPERUSER","ADMIN");
+//                .withUser("admin").password("{noop}admin").roles("SUPERUSER","ADMIN");
 
     }
 
     @Override protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/encrypt**").hasAnyRole("SUPERUSER","ADMIN")
-                .antMatchers("/decrypt**").hasAnyRole("SUPERUSER","ADMIN")
-                .antMatchers("/chire-dev/**").hasAnyRole("SUPERUSER")
-                .anyRequest().permitAll() .and().csrf() .disable();
+//        http.formLogin().and().authorizeRequests()
+//                .antMatchers("/encrypt/**").hasAnyRole("SUPERUSER","ADMIN")
+//                .antMatchers("/decrypt/**").hasAnyRole("SUPERUSER","ADMIN")
+//                .antMatchers("/chire-dev/**").hasAnyRole("SUPERUSER")
+                .anyRequest().permitAll().and().csrf().disable();
     }
 }

@@ -19,10 +19,6 @@
 spring:
   application:
       name: eureka-server
-#  security:
-#    user:
-#      name: jerry
-#      password: jerry
 
 server:
   port: 8781
@@ -32,6 +28,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer2:8782/eureka
+
+
+logging:
+  dir: /Users/dbit_user/Desktop/logs
 
 
 
